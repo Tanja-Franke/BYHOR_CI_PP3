@@ -27,7 +27,7 @@
             <div id="wordcontainer" class="container">Word</div>
             <div id="guesscontainer" class="container">
                 <div id="enteranswer"><label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
-                    <input type="text" maxlength="1" id="answerinput" placeholder="Enter a letter"
+                    <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
                         aria-labelledby="answerinput">
                     <button type="submit" onclick="checkAnswer()">Check Answer</button>
                 </div>
@@ -40,7 +40,13 @@
                     </form>
                 </div>
             </div>
-            <div id="hintscontainer" class="container"></div>
+            <div id="hintscontainer" class="container">
+                <label for="showhints" id="clue" aria-label="show hints">
+                    <h2>Hints</h2>
+                    </label>
+                    <input type="checkbox" id="showhints" name="clue">
+                    <div id="hintscontent"><p>x</p></div>
+            </div>
             <div id="trackingcontainer" class="container">
                 <p id="guessesleft">Attempts: n/6</p>
             </div>

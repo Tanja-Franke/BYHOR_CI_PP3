@@ -46,6 +46,8 @@ header {
 /*Buttons*/
 #buttons {
     display: flex;
+    justify-content: center;
+    gap: 1em;
 }
 
 button,
@@ -77,7 +79,7 @@ button,
 
 #clue:hover,
 button:hover,
-input:hover {
+#cancel:hover {
     color: #fca311;
 }
 

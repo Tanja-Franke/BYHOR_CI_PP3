@@ -24,12 +24,12 @@
             <div id="housecontainer" class="container">
                 <img src="#" alt="Your House" id="house">
             </div>
-            <div id="wordcontainer" class="container">Word</div>
+            <div id="wordcontainer" class="container"></div>
             <div id="guesscontainer" class="container">
                 <div id="enteranswer"><label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
                     <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
                         aria-labelledby="answerinput">
-                    <button type="submit" onclick="checkAnswer()">Check Answer</button>
+                    <button type="submit" onclick="compareAnswer()">Check Answer</button>
                 </div>
                 <div id="alreadyguessed">
                     <p><b>x</b></p>
@@ -42,15 +42,19 @@
             </div>
             <div id="hintscontainer" class="container">
                 <label for="showhints" id="clue" aria-label="show hints">
-                    <h2>Hints</h2>
+                    <b>Hints</b>
                     </label>
                     <input type="checkbox" id="showhints" name="clue">
                     <div id="hintscontent"><p>x</p></div>
             </div>
+
             <div id="trackingcontainer" class="container">
-                <p id="guessesleft">Attempts: n/6</p>
+                <p></p>
             </div>
         </div>
+    </main>
+    <script src="assets/js/wordlist.js"></script>
+    <script src="assets/js/script.js"></script>
         <footer>
             <p id="copy">This website was solely created for educational purposes by T. F. <span><a
                         href="https://de.linkedin.com/in/tanja-franke" target="_blank" rel="noopener"
@@ -58,8 +62,7 @@
                 <span><a href="https://github.com/Tanja-Franke" target="_blank" rel="noopener"
                         aria-label="Visit my github-profile"><i class="fa-brands fa-github"></i></a></span>
             </p>
-    </main>
-    </footer>
+        </footer>
     <!--Font Awesome Kit-->
     <script src="https://kit.fontawesome.com/4d6269d5e5.js" crossorigin="anonymous"></script>
 </body>

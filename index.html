@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,48 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    
-    
+    <header id="title">
+        <h1>Build Your House On Solid Ground!</h1>
+    </header>
+    <main>
+        <div id="gamearea">
+            <div id="housecontainer" class="container">
+                <img src="#" alt="Your House" id="house">
+            </div>
+            <div id="wordcontainer" class="container">Word</div>
+            <div id="guesscontainer" class="container">
+                <div id="enteranswer"><label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
+                    <input type="text" maxlength="1" id="answerinput" placeholder="Enter a letter"
+                        aria-labelledby="answerinput">
+                    <button type="submit" onclick="checkAnswer()">Check Answer</button>
+                </div>
+                <div id="alreadyguessed">
+                    <p><b>x</b></p>
+                </div>
+                <div id="buttons"><button type="reset">Reset</button>
+                    <form action="index.html">
+                        <input type="button" value="Cancel" id="cancel">
+                    </form>
+                </div>
+            </div>
+            <div id="hintscontainer" class="container"></div>
+            <div id="trackingcontainer" class="container">
+                <p id="guessesleft">Attempts: n/6</p>
+            </div>
+        </div>
+        <footer>
+            <p id="copy">This website was solely created for educational purposes by T. F. <span><a
+                        href="https://de.linkedin.com/in/tanja-franke" target="_blank" rel="noopener"
+                        aria-label="Visit my linkedin-profile"><i class="fa-brands fa-linkedin"></i></a></span>
+                <span><a href="https://github.com/Tanja-Franke" target="_blank" rel="noopener"
+                        aria-label="Visit my github-profile"><i class="fa-brands fa-github"></i></a></span>
+            </p>
+    </main>
+    </footer>
+    <!--Font Awesome Kit-->
+    <script src="https://kit.fontawesome.com/4d6269d5e5.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

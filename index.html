@@ -30,15 +30,15 @@
                 <img src="#" alt="Your House" id="house">
             </div>
             <div id="wordcontainer" class="container">
-                <p></p>
+                <p id="current"></p>
             </div>
             <div id="guesscontainer" class="container">
                 <div id="enteranswer">
-                    <form onsubmit="runGame(); return false;">
+                    <form onsubmit="checkAnswer(); return false;">
                         <label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
                         <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
                             aria-labelledby="answerinput">
-                        <button type="submit" onclick="compareAnswer()">Check Answer</button>
+                        <button id="submit" type="submit">Check Answer</button>
                     </form>
                 </div>
                 <div id="alreadyguessed">
@@ -46,12 +46,10 @@
                         <h4>Already guessed: </h4>
                         <p><b></b></p>
                 </div>
-                <div id="buttons"><button type="reset">Reset</button>
-                    <form action="index.html">
-                        <input type="button" value="Cancel" id="cancel">
-                    </form>
+                <div id="buttons">
+                    <button type="reset">Reset</button>
+                    <button type="submit" id="cancel" onclick="resetGame()">Cancel</button>
                 </div>
-            </div>
             <div id="hintscontainer" class="container">
                 <label for="showhints" id="clue" aria-label="show hints">
                     <b>Hints</b>

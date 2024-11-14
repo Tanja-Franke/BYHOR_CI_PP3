@@ -5,8 +5,11 @@ const trackAttempts=document.querySelector("#trackingcontainer");
 const gameModal=document.querySelector("#game-modal");
 const playAgainBtn=document.querySelector(".play-again");
 const inputWrong=document.querySelector("#alreadyguessed");
+const submitAnswerBtn=document.querySelector("#submit");
+const input=document.querySelector("#answerinput").value;
+let guessesList=[];
 //Initial variables
-let currentWord, correctLetters, wrongLetters;
+let currentWord, correctLetters, wrongLetters, hidden;
 const maxAttempts=6;
 //reset game function
 const resetGame = () => {
@@ -14,54 +17,54 @@ const resetGame = () => {
     houseImage.src="assets/images/housecontainerimages/house_0.png";
     trackAttempts.innerText=`Attempts: ${attemptsCount} / ${maxAttempts}`;
 //Create blanks for the currentWord
-wordDisplay.innerHTML=currentWord.split("_").map(() => `<div id="wordcontainer></div>`).join("");
+    let hidden=[];
+        for (let i=0;i<currentWord.length;i++){
+        hidden[i]="__";
+        }
+    document.getElementById("current").innerHTML=hidden;
 }
-//function get random word from list
-const getRandomWord=()=>{
-//picking random word and hint from word array
-const {word,hint}=bibleWordList[Math.floor(Math.random()*bibleWordList.length)];
-//set word and update hint
+
+//handle win or lose
+const gameOver = () => {
+    if (attemptsCount===maxAttempts){
+        alert("Sorry, <br> you lost!")
+    }
+}
+//start game
+const runGame = () => {
+    const {word,hint}=bibleWordList[Math.floor(Math.random()*bibleWordList.length)];
+    //set word and update hint
 currentWord=word;
 document.querySelector("#cue").innerText=hint;
-resetGame()
+resetGame ();
 }
-//handle win or lose
-const gameOver = (isVictory) =>{
-    const modalShow=isVictory? `You have built your house on solid ground!`: `Your house just collapsed!`;
-    gameModal.querySelector("h4").innerText = isVictory? 'Congratulations!' : 'Sorry!';
-    gameModal.querySelector("p").innerText = `${modalShow}`;
-    gameModal.classList.add("show");
-   }
-//handle game logic
-let input= document.querySelector("#answerinput").value
-const runGame = () => {
-    //checking if the right letter is the currentWord
-    if (currentWord.includes(input)) {
-        //update letter if input is in the currentWord
-        [...currentWord].forEach((letter,index)=>{
-            if (letter===input) {
-                correctLetters.push(letter);
-                wordDisplay.querySelector("p")[index].innerText =letter;
-                wordDisplay.querySelector("p")[index].classList.add("guessed");
-            }
-        });
-    } else {
-        // update wrong letters, attempts made and update the house image in terms of wrong guess
-        attemptsCount ++; houseImage.src`assets/images/housecontainerimages/house_${attemptsCount}.png`;
-        //update wrong letters
-        inputWrong.querySelector("p").innerText=input;
-        inputWrong.querySelector("p").classList.add("wrongguesses");
-        //disabled wrong guesses
-        let noNo=document.querySelector(".wrongguesses");
-        noNo.disabled=true;
-        //check if user wants to quit game (whether the user wins or loses)
-        if (attemptsCount===maxAttempts) return gameOver(false);
-        if (correctLetters.length===currentWord.length) return gameOver(true);
-   }
+//check input
+const checkAnswer = () => {
+    if(!input.value){
+        alert("Empty input. Please enter a letter");
+        return;}
+    //clear the input
+    input.value="" ;
+    //add wrong letter to guesses list
+    guessesList.push(input);
+    //update letter in currentWord
+    let updatedWord="";
+    let guessAllCorrect= true;
+    for (let j = 0; j<hidden.length; j++) {
+        if(input.includes(hidden[j])){
+            updatedWord+=
+            hidden[j] + " ";
+        } else {
+            guessAllCorrect=false;
+        }
+    }
 }
-//starting the game
-getRandomWord();
 
-gameOver();
-
-
+//DOMContentLoad waiting for DOM to load before starting the game 
+//(https://dev.to/obere4u/domcontentloaded-vs-windowonload-9mc, love maths walkthrough)
+document.addEventListener('DOMContentLoaded', function () {
+    runGame();
+  });
+  // add eventListener for buttons
+submitAnswerBtn.addEventListener("clicked",checkAnswer());
+playAgainBtn.addEventListener("clicked", runGame());

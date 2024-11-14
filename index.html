@@ -21,18 +21,30 @@
     </header>
     <main>
         <div id="gamearea">
+            <div id="game-modal" class="container">
+                    <h4></h4>
+                    <p></p>
+                    <button class="play-again">Play Again</button>
+            </div>
             <div id="housecontainer" class="container">
                 <img src="#" alt="Your House" id="house">
             </div>
-            <div id="wordcontainer" class="container"></div>
+            <div id="wordcontainer" class="container">
+                <p></p>
+            </div>
             <div id="guesscontainer" class="container">
-                <div id="enteranswer"><label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
-                    <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
-                        aria-labelledby="answerinput">
-                    <button type="submit" onclick="compareAnswer()">Check Answer</button>
+                <div id="enteranswer">
+                    <form onsubmit="runGame(); return false;">
+                        <label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
+                        <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
+                            aria-labelledby="answerinput">
+                        <button type="submit" onclick="compareAnswer()">Check Answer</button>
+                    </form>
                 </div>
                 <div id="alreadyguessed">
-                    <p><b>x</b></p>
+                    <p id="guessedletter">
+                        <h4>Already guessed: </h4>
+                        <p><b></b></p>
                 </div>
                 <div id="buttons"><button type="reset">Reset</button>
                     <form action="index.html">
@@ -43,11 +55,12 @@
             <div id="hintscontainer" class="container">
                 <label for="showhints" id="clue" aria-label="show hints">
                     <b>Hints</b>
-                    </label>
-                    <input type="checkbox" id="showhints" name="clue">
-                    <div id="hintscontent"><p>x</p></div>
+                </label>
+                <input type="checkbox" id="showhints" name="clue">
+                <div id="hintscontent">
+                    <p id="cue"></p>
+                </div>
             </div>
-
             <div id="trackingcontainer" class="container">
                 <p></p>
             </div>
@@ -55,14 +68,14 @@
     </main>
     <script src="assets/js/wordlist.js"></script>
     <script src="assets/js/script.js"></script>
-        <footer>
-            <p id="copy">This website was solely created for educational purposes by T. F. <span><a
-                        href="https://de.linkedin.com/in/tanja-franke" target="_blank" rel="noopener"
-                        aria-label="Visit my linkedin-profile"><i class="fa-brands fa-linkedin"></i></a></span>
-                <span><a href="https://github.com/Tanja-Franke" target="_blank" rel="noopener"
-                        aria-label="Visit my github-profile"><i class="fa-brands fa-github"></i></a></span>
-            </p>
-        </footer>
+    <footer>
+        <p id="copy">This website was solely created for educational purposes by T. F. <span><a
+                    href="https://de.linkedin.com/in/tanja-franke" target="_blank" rel="noopener"
+                    aria-label="Visit my linkedin-profile"><i class="fa-brands fa-linkedin"></i></a></span>
+            <span><a href="https://github.com/Tanja-Franke" target="_blank" rel="noopener"
+                    aria-label="Visit my github-profile"><i class="fa-brands fa-github"></i></a></span>
+        </p>
+    </footer>
     <!--Font Awesome Kit-->
     <script src="https://kit.fontawesome.com/4d6269d5e5.js" crossorigin="anonymous"></script>
 </body>

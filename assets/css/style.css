@@ -15,7 +15,10 @@ header {
     justify-content: center;
     margin: 20px auto;
 }
-
+/*Game Modal*/
+#game-modal{
+    display: block;
+}
 /*Main area*/
 #gamearea {
     padding-bottom: 2.5rem;

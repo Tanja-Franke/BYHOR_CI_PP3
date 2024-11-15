@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     resetGame();
     console.log("content loaded!");
+    alert("Welcome, type in a letter and check your bible knowledge by guessing the searched word right. God bless you and have fun ✝")
 });
 
 //Variables

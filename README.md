@@ -1,131 +1,373 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Build Your House On Solid Ground-Game <img src="favicon.ico" alt=" icon" height="30">
 
-Welcome Tanja Franke,
+## Description
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+“Build Your House on Solid Ground-Game” is leaned on the popular hangman game. But instead of a man get hung up when maximum attempts are used, the player needs to guess the word right to prevent the house from collapsing.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+![amIresponsive mockup](assets/images/readmeimages/am_I_responsive.PNG)
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+You can visit the live website [here!]( https://tanja-franke.github.io/BYHOSG_CI_PP3/)
 
-`python3 -m http.server`
+## Game Rules
 
-A blue button should appear to click: _Make Public_,
+The Build Your House on Solid Ground-Game is a game that tests the players´ bible-knowledge by guessing the word from a chosen category right. Here’s how to play:
 
-Another blue button should appear to click: _Open Browser_.
+**Starting the Game:**
+   - In order to start the game, the user needs to type in a wanted letter in the input field. When the page is restarted a random word will be caught from the wordlist.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+**Guessing the Word:**
+   -  By typing in the right letter, the searched word will be visible by each right guesses.
 
-A blue button should appear to click: _Make Public_,
+**Continuing the Game:**
+   - The user can click on "Cancel" to restart the game or by refreshing the page.
 
-Another blue button should appear to click: _Open Browser_.
+**Winning the Game:**
+   - The player wins the game by successfully entering the right letter within the given maximum attempts.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**Game Over:**
+   - If the player enters the wrong letter six times and has not guessed the word right. A picture of a collapsed house will be shown. Thus he/she fails to build the house on solid ground (This feature unfortunately doesn´t work properly.)
+   - The player can restart the game by pressing the "Cancel" button or refresh the page.
 
-To log into the Heroku toolbelt CLI:
+**Additional Features (to be included in the future ):**
+      - **Score tracker:** User can track their scores and see their progress.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Test Your Bible knowledge and play the game!
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
+## History of the Hangman Game
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+The Hangman game was originated from 17th century Europe and was first introduced as “Rite of Words and Life.” This was played or rather was demanded by prisoners facing death penalty. Due to its dark beginnings, the game has been modified in a variety of ways to appear more kid friendly. In this case the game was adjusted to be “Build your House on Solid Ground-Game”. Until this day the hangman game still is one of the popular classroom, paper and pencil guessing game.
 
-------
+#### **How It Works**
 
-## Release History
+Blank line spaces of a particular word are presented by the host. The player/s then guess the word by calling out letter by letter. The right guesses will be revealed and the blanks replaced by the letter. With each wrong guess, however a drawing of a hangman comes together line by line or body part by body part. The game ends either by guessing the word right or by a complete drawing of the hangman, which means that game is lost.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### **Benefits**
 
-**June 18, 2024,** Add Mongo back into template
+It is said that playing hangman will extend the existing vocabulary knowledge and spelling. It enhances cognitive skills and improves analytical thinking as the player must think of a strategy of calling out specific letters in a certain order. Moreover, it is a wonderful source of entertainment.
+<img src="assets/images/readmeimages/classic_hangman.jpg" alt="classic hangman game"/>
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+## **User Experience**
 
-**May 28 2024:** Fix Mongo and Links installs
+#### **Project Goals**
 
-**April 26 2024:** Update node version to 16
+1. **Provide an engaging and interactive game that challenges the Bible knowledge of the player.**
+2. **Offer a visually appealing and responsive design suitable for both desktop and mobile users.**
+3.  **Ensure an uninterrupted and user-friendly user interface.**
 
-**September 20 2023:** Update Python version to 3.9.17.
+### **User expectations**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Website is easy to access from any devices
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Website works on all devices in terms of appearance
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- User-friendly interface where the user can get around using the webpage effortlessly
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- Links and features that work the way they should
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Simple layout
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Get help in the game by getting hints
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+-Abort and restart the game anytime
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+-Get feedback about the typed letter
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+-Track progress and see how many attempts left
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### **User stories**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### **User**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- As a younger or an older user, I want a simple, beginner-friendly interface that allows me to straightforwardly play the game.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- As a believer, I want to test my bible knowledge and have fun in a biblical way.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### **Target Audience**
 
-------
+- Users wanting to test their Bible knowledge for fun.
+- Individuals seeking to improve their Bible knowledge.
+- User looking for a simple and fun game to play.
 
-## FAQ about the uptime script
+#### **Demographic:**
+-	User aged between 6 and 90+ years
 
-**Why have you added this script?**
+## **Design**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### **Colours**
 
-**How will this affect me?**
+Colors were generated by [coolors](https://coolors.co/)
+![Coolors Palette](assets/images/readmeimages/colors.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### **Typography**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- All icons were sourced through [Font Awesome](https://fontawesome.com/)
+- All fonts were sourced through [Google Fonts](https://fonts.google.com/)
+- [Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+#### **Wireframe and Prototype**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+##### [Balsamiq](https://balsamiq.com/) wireframe:
 
-**Can I opt out?**
+<details>
+<summary> Open for desktop wireframe </summary>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<img src="assets/images/readmeimages/desktop_wireframe.png" alt="balsamiq wireframe desktop" style="width: 400px;" />
 
+</details>
+
+<details>
+<summary> Open for mobile wireframe </summary>
+
+<img src="assets/images/readmeimages/mobile_wireframe.png" alt="balsamiq wireframe mobile" style="width: 300px;" />
+
+</details>
+<details>
+<summary> Open for tablet wireframe </summary>
+
+<img src="assets/images/readmeimages/tablet_wireframe.png" alt="balsamiq wireframe tablet" style="width: 300px;" />
+
+</details>
+
+
+## Features
+
+#### **Meta Tags and Optimization**
+
+The <head> section of the Build your House on Solid Ground-Game website includes essential meta tags for SEO and social media sharing. The meta description provides a summary for search engines, while the keywords tag helps search engines understand the site content. 
+
+#### **Game website**
+
+The Home page serves as the main entry and exit point for the application, as it consists of only one page. It features a "Cancel" button to navigate users to the refresh Game screen and a "Hints" button that reveals hints to users if needed. The layout includes introductory elements and the game title, providing users with an engaging and accessible start to their experience.
+
+| Desktop                                                                           | Mobile                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| <img src="assets/images/readmeimages/title.PNG" alt="desktop project image"/> | <img src="./assets/images/home-screen-mobile.webp" alt="mobile desktop image"/> |
+
+#### **Game Area**
+
+The Game area is where the actual game takes place. It includes house-container, the searched word container and displays to the user their maximum number of attempts and how many they have used as well as the already used letter.
+
+| Desktop                                                                           | Mobile                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| <img src="assets/images/readmeimages/house container.PNG" alt="desktop project image"/> | <img src="./assets/images/game-screen-mobile.webp" alt="mobile desktop image"/> |
+
+## BEM Methodology
+
+BEM (Block, Element, Modifier) is a popular naming convention for classes in HTML and CSS, originally developed by Yandex. It is designed to create reusable, modular, and maintainable code.
+
+#### BEM Structure
+
+BEM divides the user interface into independent blocks, which can be reused across different parts of the application. The naming convention follows a specific structure:
+
+- **Block**: The top-level component or a standalone entity that is meaningful on its own.
+  - Example: `header`, `container`, `menu`
+- **Element**: A part of a block that performs a certain function and has no standalone meaning.
+  - Example: `header__title`, `menu__item`
+- **Modifier**: A flag on a block or an element that changes its appearance or behavior.
+  - Example: `menu__item--active`, `header--large`
+
+#### Naming Convention
+
+The BEM naming convention uses a double underscore (`__`) to separate elements from their block and a double hyphen (`--`) to separate modifiers from blocks or elements.
+
+- **Block**: `block-name`
+- **Element**: `block-name__element-name`
+- **Modifier**: `block-name--modifier-name` or `block-name__element-name--modifier-name`
+
+#### Example
+
+```html
+<div class="menu">
+  <ul class="menu__list">
+    <li class="menu__item menu__item--active">Home</li>
+    <li class="menu__item">About</li>
+    <li class="menu__item">Contact</li>
+  </ul>
+</div>
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+In this example:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- `menu` is the block.
+- `menu__list` and `menu__item` are elements of the menu block.
+- `menu__item--active` is a modifier that changes the appearance of the `menu__item` element.
 
----
+#### Benefits of BEM
 
-Happy coding!
+1. **Clarity and Readability:** BEM makes it clear what each class refers to by looking at its name. It is easy to identify whether a class represents a block, an element, or a modifier.
+
+2. **Modularity:** BEM promotes the creation of independent components. Each block is standalone, making it easier to reuse and maintain.
+
+3. **Avoids Naming Conflicts:** The structured naming convention helps avoid class name conflicts, which are common in larger projects with many contributors.
+
+4. **Improved Maintainability:** With BEM, the CSS and HTML structure is more organized, making it easier to understand, debug, and modify the code.
+
+5. **Enhanced Scalability**: BEM's approach is particularly useful for large projects as it provides a consistent methodology for naming and structuring classes.
+
+6. **Better Collaboration:** The clarity and structure provided by BEM make it easier for multiple developers to work on the same project without confusion.
+
+## Testing
+
+Responsiveness has been checked and adjusted in Chrome Dev Tools and the site has been viewed on mobiles and desktop without issues and the following browsers:
+
+- Chrome
+
+- Safari
+
+- Edge
+
+#### **JSHint Validation**
+
+The JavaScript code has been run through the [JS Hint](https://jshint.com/) validator. Results can be found below.
+
+<img src="assets/images/readmeimages/jsHint.PNG" alt="js hint validation"/>
+
+#### **HTML Validation**
+
+The HTML code has been run through the [W3C - HTML](https://validator.w3.org/) validator. Results can be found below.
+
+<img src="assets/images/readmeimages/html checker.PNG" alt="w3c html validation" />
+
+#### **CSS Validation**
+
+The CSS code has been run through the [W3C - CSS](https://jigsaw.w3.org/css-validator/) validator. Results can be found below.
+<img src="assets/images/readmeimages/css validation.PNG" alt="w3c css validation" />
+
+#### **Google Lighthouse**
+
+The lighthouse score results can be found below.
+
+<img src="assets/images/readmeimages/lighthouse.PNG" alt="google lighthouse desktop" />
+<img src="assets/images/readmeimages/lighthouse_mobile.PNG" alt="google lighthouse mobile" />
+
+#### **WAVE Accessibility Evaluation**
+
+The WAVE accessibility evaluation tool results can be found below.
+
+<img src="assets/images/readmeimages/wavevalidation.PNG" alt="WAVE accessibility evaluation" style="width: 400px;" />
+
+#### **Manual Testing**
+
+| Features                   | Expected Outcome                                                            | Test Performed                                             | Results                                                                                      | Pass/Fail |
+| -------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
+| **Home/Game Screen**            |
+| Check Answer Button                | Check the input                                                | Clicked "Check Answer" button                                      | Successfully checking the letter and give feedback by alert oder by displaying                                                    |:white_check_mark:
+|
+| Hints Check Button               | open and close hints                                            | Clicked "hints" button                                     | Successfully open and close hints                                                  | :white_check_mark:
+    |
+| **attempt count**           |
+| Cancel Button               | Reset game                                                 | Clicked "Cancel" button                                     | Successfully reset game and catch new random word                                               | :white_check_mark:
+      |
+| **Game Area**            |
+| display currentWord in "_ "              | display word in arrays of "_"                                | refresh page                                | currentWord show in "_ "                                            | :white_check_mark:
+    |
+| winning alert box              | When the word is guessed, alert box should show up                                     | win the game                                   | alert box show up                                               |:white_check_mark:
+|
+|  loss alert box              | When word is not guessed within the maxium attempts, alert box should show up                                        | lose the game                                    | alert box show up                                           | :white_check_mark:
+     |
+
+| **Footer**                 |
+| Footer Link to GitHub      | The footer contains a link that opens the GitHub repository in a new tab.   | Check the footer section of the page and inspect the link. | The link is present and correctly opens in a new tab.                                        | :white_check_mark:
+    |
+
+### **Bugs**
+
+### 1. 
+
+**Description:**  
+
+
+
+
+**Expected Behavior:**
+
+**Actual Behavior:**
+When multiple clicks are detected, the game ends correctly but immediately resets to the initial state without giving the player a chance to take any action or see the "game over" message for a reasonable time.
+
+**Solution:**
+No solution
+
+
+#### **Test Final Review**
+
+The testing procedures have been executed, meeting certain criteria apart from some bugs, that I couldn´t get it fixed due to lack of time. Results have been documented, and any identified issues have been addressed. Post-testing, the website has been confirmed to be fully functional and accessible.
+
+## Tech Stack
+
+This website is developed using the following technologies:
+
+**HTML**: For structuring the content and layout of the web pages.
+
+**CSS**: For styling the website and making it visually appealing.
+
+**JavaScript**: For adding interactivity and dynamic features to the website.
+
+## Tools Used
+
+This website is developed using the following tools:
+
+**GitHub**: Used for version control and code storage. GitHub allows for collaborative development, issue tracking, and code review, ensuring a smooth workflow and version management.
+
+**Gitpod**: Cloud-based workspace environment where developers can code, write and debug without any local setup.
+
+**Google DevTools**: A set of web developer tools built directly into the Google Chrome browser. Google DevTools provides features for debugging, editing CSS and HTML on the fly, and analyzing website performance.
+
+**Google Fonts**: A library of over a thousand free and open-source font families. Google Fonts ensures consistent and aesthetically pleasing typography across different browsers and devices.
+
+**Font Awesome**: A toolkit for using icons and social logos on your website. Font Awesome icons are vector-based, which makes them highly customizable in terms of size, color, and positioning.
+
+**gauger.io/fonticon/**: A tool to make favicons out of fonticonts.
+
+**W3C Markup Validation Service**: A tool provided by the World Wide Web Consortium (W3C) to validate HTML and XHTML documents. This service checks for errors in the markup to ensure compliance with web standards.
+
+**W3C CSS Validation Service**: A tool provided by W3C to validate CSS code. It helps in identifying errors and potential issues in the stylesheet, ensuring it adheres to CSS standards.
+
+**WAVE Accessibility**: A web accessibility evaluation tool. WAVE helps in identifying accessibility issues on web pages, ensuring they are accessible to users with disabilities.
+
+**Google Lighthouse**: An open-source, automated tool for improving the quality of web pages. Lighthouse audits performance, accessibility, SEO, and other best practices, providing insights and recommendations for improvement.
+
+**Balsamiq**: A wireframing tool used to create low-fidelity mockups. Balsamiq helps in quickly visualizing the structure and layout of web pages before moving on to high-fidelity design.
+
+**JSHint:** A static code analysis tool used to detect errors and potential problems in JavaScript code. JSHint helps ensure code quality and adherence to best practices.
+
+**Beautify**: A code formatter that enforces a consistent style by parsing your code and re-printing it with its rules. Prettier helps maintain clean and readable code throughout the project.
+
+**Am I Responsive** An online tool to create mockups.
+
+Each of these tools are vital to the coding process, deployment and maintenance of the project.
+
+## Deployment
+
+_This website is deployed using Git Pages_
+
+#### Steps
+
+1. **Log in to Git Hub:** Navigate to the [Github website](https://github.com/) and log in to your account.
+2. **Go to your repository:** Once logged in, the dashboard will appear and on the left-hand side there are your top repository.
+3. **Select Repository:** Select the repository for website to be deployed, in this case, "twtttl-church"
+4. **Go to the Settings tab:** Click on the setting tab and a new interface will open
+5. **Select Pages:** On the left-hand side you will find 'Pages' nested in the Code and automation section, 
+6. **Configure Settings:** 'Source' needs to be set to `Deploy from Branch’ the 'Main branch' should be selected and the folder needs to be set to '/root'
+7. **Deploy website:** By clicking 'Save' under the branch, your website will be deployed.
+8. **Refresh Repository:** Return to the Code tab. After a few minutes you can refresh your repository.
+9. **View the deployment:** Go to ´github-pages’ on the right-hand side and see your deployment.
+10.**Live Site:** After the deployment process is complete, GitHub will provide you with a unique URL consisting of your username and the name of your project for your live site. 
+You can access my live site by visiting this URL.[Live website]( https://tanja-franke.github.io/BYHOSG_CI_PP3/)
+
+## Credits
+The JS code were taken and individually adapted from Youtube tutorial by [@Great Day Designs](https://youtu.be/EJ3GeUDGLE4?feature=shared) and from an anonymous user from [GeeksforGeeks]( https://www.geeksforgeeks.org/word-guessing-game-using-html-css-and-javascript/). For a better understanding of javaScript I refer back to the CI lessons and to an eBook from [No Starch Press, JavaScript for Kids](https://nostarch.com/download/JS4K_ch7.pdf).
+Readme template was taken from CI_template and from [@Tulio Minini](https://github.com/t-minini) and adapted accordingly 
+All images used in this project are credited to their respective authors. You can find the authors´ information below. 
+Credits to: freepiks.com @ Konkapp, @ pojok d, @ Iconjam
+
+
+## Acknowledgements
+
+A special thank you to my mentor [Harry Dhillon](https://www.linkedin.com/in/harry-dhillon-299b321b3/) from [Code Institute](https://codeinstitute.net/ie/), for your advice, feedback.
+My CI facilitator Kamil Wojciechowski and my peers from 5p for motivating, helping and giving me feedback and reviewing my work!
+The Stack Overflow community for providing answers to specific coding questions.
+
+

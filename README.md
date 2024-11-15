@@ -257,7 +257,7 @@ The WAVE accessibility evaluation tool results can be found below.
 | Check Answer Button                | Check the input                                                | Clicked "Check Answer" button                                      | Successfully checking the letter and give feedback by alert oder by displaying                                                    |:white_check_mark:
 |
 | Hints Check Button               | open and close hints                                            | Clicked "hints" button                                     | Successfully open and close hints                                                  | :white_check_mark:
-    |
+    
 | **attempt count**           |
 | Cancel Button               | Reset game                                                 | Clicked "Cancel" button                                     | Successfully reset game and catch new random word                                               | :white_check_mark:
       |
@@ -270,7 +270,7 @@ The WAVE accessibility evaluation tool results can be found below.
      |
 
 | **Footer**                 |
-| Footer Link to GitHub      | The footer contains a link that opens the GitHub repository in a new tab.   | Check the footer section of the page and inspect the link. | The link is present and correctly opens in a new tab.                                        | :white_check_mark:
+| Footer Link to GitHub and LinkIn     | The footer contains a link that opens the GitHub repository and LinkIn in a new tab.   | Check the footer section of the page and inspect the link. | The link is present and correctly opens in a new tab.                                        | :white_check_mark:
     |
 
 ### **Bugs**

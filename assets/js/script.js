@@ -1,70 +1,85 @@
-//Variables
-const wordDisplay=document.querySelector("#wordcontainer");
-const houseImage=document.querySelector("#housecontainer img");
-const trackAttempts=document.querySelector("#trackingcontainer");
-const gameModal=document.querySelector("#game-modal");
-const playAgainBtn=document.querySelector(".play-again");
-const inputWrong=document.querySelector("#alreadyguessed");
-const submitAnswerBtn=document.querySelector("#submit");
-const input=document.querySelector("#answerinput").value;
-let guessesList=[];
-//Initial variables
-let currentWord, correctLetters, wrongLetters, hidden;
-const maxAttempts=6;
-//reset game function
-const resetGame = () => {
-    attemptsCount=0;
-    houseImage.src="assets/images/housecontainerimages/house_0.png";
-    trackAttempts.innerText=`Attempts: ${attemptsCount} / ${maxAttempts}`;
-//Create blanks for the currentWord
-    let hidden=[];
-        for (let i=0;i<currentWord.length;i++){
-        hidden[i]="__";
-        }
-    document.getElementById("current").innerHTML=hidden;
-}
-
-//handle win or lose
-const gameOver = () => {
-    if (attemptsCount===maxAttempts){
-        alert("Sorry, <br> you lost!")
-    }
-}
-//start game
-const runGame = () => {
-    const {word,hint}=bibleWordList[Math.floor(Math.random()*bibleWordList.length)];
-    //set word and update hint
-currentWord=word;
-document.querySelector("#cue").innerText=hint;
-resetGame ();
-}
-//check input
-const checkAnswer = () => {
-    if(!input.value){
-        alert("Empty input. Please enter a letter");
-        return;}
-    //clear the input
-    input.value="" ;
-    //add wrong letter to guesses list
-    guessesList.push(input);
-    //update letter in currentWord
-    let updatedWord="";
-    let guessAllCorrect= true;
-    for (let j = 0; j<hidden.length; j++) {
-        if(input.includes(hidden[j])){
-            updatedWord+=
-            hidden[j] + " ";
-        } else {
-            guessAllCorrect=false;
-        }
-    }
-}
-
 //DOMContentLoad waiting for DOM to load before starting the game 
 //(https://dev.to/obere4u/domcontentloaded-vs-windowonload-9mc, love maths walkthrough)
 document.addEventListener('DOMContentLoaded', function () {
-    runGame();
-  });
-  // add eventListener for buttons
-submitAnswerBtn.addEventListener("clicked",checkAnswer());
-playAgainBtn.addEventListener("clicked", runGame());
+    resetGame();
+    console.log("content loaded!")
+});
+
+//Variables
+const wordDisplay = document.querySelector("#wordcontainer");
+const houseImage = document.querySelector("#housecontainer img");
+const trackAttempts = document.querySelector("#trackingcontainer");
+const gameModal = document.querySelector("#game-modal");
+const playAgainBtn = document.querySelector(".play-again");
+const inputWrong = document.querySelector("#alreadyguessed");
+const submitAnswerBtn = document.querySelector("#submit");
+const input = document.querySelector("#answerinput");
+let guessesList = [];
+let wordArray = [];
+let currentWord, correctLetters, wrongLetters, attemptsCount, newAttempt;
+const maxAttempts = 6;
+//function to resetGame
+const resetGame = () => {
+    attemptsCount = 0;
+    houseImage.src = "assets/images/housecontainerimages/house_0.png";
+    trackAttempts.innerText = `Attempts: ${attemptsCount} / ${maxAttempts}`;
+    getRandom();
+    };
+const getRandom = () => {
+    const { word, hint } = bibleWordList[Math.floor(Math.random() * bibleWordList.length)];
+    console.log(word, hint);
+    //set to show word and hint
+    currentWord = word;
+    document.querySelector("#cue").innerText = hint;
+    //create blanks for the searched word
+    for (let i = 0; i < currentWord.length; i++) {
+        wordArray += "_ ";
+        document.getElementById("current").innerHTML = wordArray;
+    }
+};
+//Code snipped adapted from 
+//https://www.geeksforgeeks.org/word-guessing-game-using-html-css-and-javascript/
+
+const playGame = () => {
+    // To check empty input
+    if (!input.value) {
+        alert("Empty Input box. Please add input letter");
+        return;
+    }
+
+    let letter = input.value.toLowerCase();
+
+    // Clear the input field
+    input.value = "";
+
+    // Check if the letter has already been guessed
+    if (guessesList.includes(letter)) {
+        alert("You have already guessed that letter! Try with another one.");
+        return;
+    }
+
+    // Add the letter to the guessed letters array
+    guessesList.push(letter);
+   
+    //Show letter in guessesList container
+    document.getElementById("guessed").innerHTML = letter;
+
+    // Update the word display based on the guessed letters
+    let updatedDisplay = "";
+    let allLettersGuessed = true;
+    for (let a = 0; a < currentWord.length; a++) {
+        if (guessesList.includes(currentWord[a])) {
+            updatedDisplay += currentWord[a] + " ";
+        } else {
+            updatedDisplay += "_ ";
+            allLettersGuessed = false;
+            attemptsCount++;
+}
+        }
+    document.getElementById("current").textContent = updatedDisplay;
+        document.querySelector("#trackingcontainer p").innerHTML= `Attempts: ${attemptsCount}/ ${maxAttempts}`;
+    // Check if all letters have been guessed
+    if (allLettersGuessed) {
+        alert(`Congratulations! You build your house on solid ground! You guessed: ${currentWord} !`);
+        }
+    };

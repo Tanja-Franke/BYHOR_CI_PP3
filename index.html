@@ -7,7 +7,7 @@
     <!--Meta tags for search engines-->
     <meta name="description" content="Interactive game to see whether you build your house on solid ground or not.">
     <meta name="keywords" content="bible knowledge, the Word of God, characters in the Bible, Jesus, game, 
-     Matthew 7: 24-27, wise and foolish builders">
+         Matthew 7: 24-27, wise and foolish builders">
     <title>Build Your House On Solid Ground</title>
     <!--Favicon-->
     <link rel="shortcut-icon" type="image/x-icon" href="favicon.ico">
@@ -21,11 +21,6 @@
     </header>
     <main>
         <div id="gamearea">
-            <div id="game-modal" class="container">
-                    <h4></h4>
-                    <p></p>
-                    <button class="play-again">Play Again</button>
-            </div>
             <div id="housecontainer" class="container">
                 <img src="#" alt="Your House" id="house">
             </div>
@@ -34,34 +29,36 @@
             </div>
             <div id="guesscontainer" class="container">
                 <div id="enteranswer">
-                    <form onsubmit="checkAnswer(); return false;">
+<!--Answer submission-->  
+                    <form autocomplete="off" onsubmit="playGame(); return false;">
                         <label for="answerinput" aria-label="enter Letter">Guess a letter: </label>
-                        <input type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
-                            aria-labelledby="answerinput">
+                        <input autocomplete="false" type="text" size="10" maxlength="1" id="answerinput" placeholder="Enter a letter"
+                            aria-labelledby="answerinput"><br><br>
                         <button id="submit" type="submit">Check Answer</button>
-                    </form>
+                    </form><br><br>
+                    <div id="buttons">
+                        <input type="reset" aria-labelledby="resetbutton" value="Reset" id="reset">
+                        <button type="submit" id="cancel" onclick="resetGame()">Cancel</button>
+                    </div>
                 </div>
+            </div>
                 <div id="alreadyguessed">
-                    <p id="guessedletter">
-                        <h4>Already guessed: </h4>
-                        <p><b></b></p>
+                    <h4>Already guessed: </h4>
+                    <p id="guessed"><b></b></p>
                 </div>
-                <div id="buttons">
-                    <button type="reset">Reset</button>
-                    <button type="submit" id="cancel" onclick="resetGame()">Cancel</button>
+                
+                <div id="hintscontainer" class="container">
+                    <label for="showhints" id="clue" aria-label="show hints">
+                        <b>Hints</b>
+                    </label>
+                    <input type="checkbox" id="showhints" name="clue">
+                    <div id="hintscontent">
+                        <p id="cue"></p>
+                    </div>
                 </div>
-            <div id="hintscontainer" class="container">
-                <label for="showhints" id="clue" aria-label="show hints">
-                    <b>Hints</b>
-                </label>
-                <input type="checkbox" id="showhints" name="clue">
-                <div id="hintscontent">
-                    <p id="cue"></p>
+                <div id="trackingcontainer">
+                    <p></p>
                 </div>
-            </div>
-            <div id="trackingcontainer" class="container">
-                <p></p>
-            </div>
         </div>
     </main>
     <script src="assets/js/wordlist.js"></script>
@@ -76,6 +73,7 @@
     </footer>
     <!--Font Awesome Kit-->
     <script src="https://kit.fontawesome.com/4d6269d5e5.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

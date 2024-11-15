@@ -144,7 +144,7 @@ The Home page serves as the main entry and exit point for the application, as it
 
 | Desktop                                                                           | Mobile                                                                          |
 | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| <img src="assets/images/readmeimages/title.PNG" alt="desktop project image"/> | <img src="./assets/images/home-screen-mobile.webp" alt="mobile desktop image"/> |
+| <img src="assets/images/readmeimages/title.PNG" alt="desktop project image"/> | <img src="assets/images/readmeimages/title-mobile.jpeg" alt="mobile desktop image"/> |
 
 #### **Game Area**
 
@@ -152,7 +152,29 @@ The Game area is where the actual game takes place. It includes house-container,
 
 | Desktop                                                                           | Mobile                                                                          |
 | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| <img src="assets/images/readmeimages/house container.PNG" alt="desktop project image"/> | <img src="./assets/images/game-screen-mobile.webp" alt="mobile desktop image"/> |
+| <img src="assets/images/readmeimages/house container.PNG" alt="house container image"/> | <img src="assets/images/readmeimages/housecontainer.jpeg" alt="mobile house container image"/> |
+| Desktop | Mobile |
+|-------------------|-------------------|
+|<img src="assets/images/readmeimages/wordcontainer.PNG" alt="word container screenshot for desktop"/>|<img src="assets/images/readmeimages/wordcontainer.jpeg" alt="wordcontainer screenshot for mobile"/>|
+| Desktop | Mobile |
+|-------------------|-------------------|
+|<img src="assets/images/readmeimages/guess_input_section.PNG" alt="answer input screenshot for desktop"/>|<img src="assets/images/readmeimages/answerinputcontainer.jpeg" alt="answer input section screenshot for mobile"/>|
+| Desktop | Mobile |
+|-------------------|-------------------|
+|<img src="assets/images/readmeimages/typpedletter_container.PNG" alt="typped letter section screenshot for desktop"/>|<img src="assets/images/readmeimages/lettertyppedcontainer.jpeg" alt="typped letter section screenshot for mobile"/>|
+|<img src="assets/images/readmeimages/tracking_attempts.PNG" alt="attempts section screenshot for desktop"/>|<img src="assets/images/readmeimages/tracking section.jpeg" alt="attempts section screenshot for mobile"/>|
+
+| Desktop | Mobile |
+|-------------------|-------------------|
+|<img src="assets/images/readmeimages/hidden_hint.PNG" alt="hints section screenshot for desktop"/>|<img src="assets/images/readmeimages/hintscontainer_close.jpeg" alt=" hints section screenshot for mobile"/>|
+
+
+### **Footer Section**
+
+The "Footer" section is indicated that the website is created for educational purposes with icons linked to the developer GitHub and LinkIn profile.
+| Desktop | Mobile |
+|-------------------|-------------------|
+|<img src="assets/images/readmeimages/footer.PNG" alt="footer section screenshot for desktop"/>|<img src="assets/readmeimages/footer_iphone14.png" alt="footer section screenshot for mobile"/>|
 
 ## BEM Methodology
 
@@ -208,6 +230,11 @@ In this example:
 5. **Enhanced Scalability**: BEM's approach is particularly useful for large projects as it provides a consistent methodology for naming and structuring classes.
 
 6. **Better Collaboration:** The clarity and structure provided by BEM make it easier for multiple developers to work on the same project without confusion.
+## Naming Convention in this case
+
+The naming convention of this project uses name related to the website content such as in the example below. Showing the argument section using the purpose of the specific sections.
+![example of code](assets/images/readmeimages/codesnippet.PNG)
+
 
 ## Testing
 
@@ -255,7 +282,6 @@ The WAVE accessibility evaluation tool results can be found below.
 | -------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
 | **Home/Game Screen**            |
 | Check Answer Button                | Check the input                                                | Clicked "Check Answer" button                                      | Successfully checking the letter and give feedback by alert oder by displaying                                                    |:white_check_mark:
-|
 | Hints Check Button               | open and close hints                                            | Clicked "hints" button                                     | Successfully open and close hints                                                  | :white_check_mark:
     
 | **attempt count**           |
@@ -275,21 +301,27 @@ The WAVE accessibility evaluation tool results can be found below.
 
 ### **Bugs**
 
-### 1. 
+### 1.
 
 **Description:**  
-
-
+When guessed right once and guessed wrong the other time, attemptsCount doesn´t increment, but stay still.
 
 
 **Expected Behavior:**
+That attemptsCount add up and thus the image change.
 
 **Actual Behavior:**
-When multiple clicks are detected, the game ends correctly but immediately resets to the initial state without giving the player a chance to take any action or see the "game over" message for a reasonable time.
+Increment stops to work and thus image does not change accordingly.
 
 **Solution:**
 No solution
+<details>
+<summary> Click to see images </summary>
 
+![image doesn`t change](assets/images/readmeimages/noimageupdate.PNG)
+![attempts doesn´t count](assets/images/readmeimages/bug of status quo.PNG)
+
+</details>
 
 #### **Test Final Review**
 

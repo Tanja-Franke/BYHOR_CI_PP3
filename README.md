@@ -291,7 +291,6 @@ The WAVE accessibility evaluation tool results can be found below.
 | winning alert box              | When the word is guessed, alert box should show up                                     | win the game                                   | alert box show up                                               |:white_check_mark:
 |
 |  loss alert box              | When word is not guessed within the maxium attempts, alert box should show up                                        | lose the game                                    | alert box show up                                           | :white_check_mark:
-
 | **Footer**                 |
 | Footer Link to GitHub and LinkIn     | The footer contains a link that opens the GitHub repository and LinkIn in a new tab.   | Check the footer section of the page and inspect the link. | The link is present and correctly opens in a new tab.                                        | :white_check_mark:
     |

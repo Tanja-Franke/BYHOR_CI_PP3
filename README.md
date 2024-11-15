@@ -287,7 +287,6 @@ The WAVE accessibility evaluation tool results can be found below.
 | Cancel Button               | Reset game                                                 | Clicked "Cancel" button                                     | Successfully reset game and catch new random word                                               | :white_check_mark:
 | **Game Area**            |
 | display currentWord in "_ "              | display word in arrays of "_"                                | refresh page                                | currentWord show in "_ "                                            | :white_check_mark:
-    |
 | winning alert box              | When the word is guessed, alert box should show up                                     | win the game                                   | alert box show up                                               |:white_check_mark:
 |
 |  loss alert box              | When word is not guessed within the maxium attempts, alert box should show up                                        | lose the game                                    | alert box show up                                           | :white_check_mark:

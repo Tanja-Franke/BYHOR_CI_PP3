@@ -312,7 +312,7 @@ No solution
 <summary> Click to see images </summary>
 
 ![image doesn`t change](assets/images/readmeimages/noimageupdate.PNG)
-![attempts doesn´t count](assets/images/readmeimages/bug of status quo.PNG)
+![attempts doesn´t count](assets/images/readmeimages/bug_attemptstracker.PNG)
 
 </details>
 

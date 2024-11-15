@@ -2,21 +2,19 @@
 //(https://dev.to/obere4u/domcontentloaded-vs-windowonload-9mc, love maths walkthrough)
 document.addEventListener('DOMContentLoaded', function () {
     resetGame();
-    console.log("content loaded!")
+    console.log("content loaded!");
 });
 
 //Variables
-const wordDisplay = document.querySelector("#wordcontainer");
+/*jshint esversion: 6 */
+
+const wordDisplay = document.querySelector("#current");
 const houseImage = document.querySelector("#housecontainer img");
-const trackAttempts = document.querySelector("#trackingcontainer");
-const gameModal = document.querySelector("#game-modal");
-const playAgainBtn = document.querySelector(".play-again");
-const inputWrong = document.querySelector("#alreadyguessed");
-const submitAnswerBtn = document.querySelector("#submit");
+const trackAttempts = document.querySelector("#trackingcontainer b");
 const input = document.querySelector("#answerinput");
 let guessesList = [];
 let wordArray = [];
-let currentWord, correctLetters, wrongLetters, attemptsCount, newAttempt;
+let currentWord, attemptsCount;
 const maxAttempts = 6;
 //function to resetGame
 const resetGame = () => {
@@ -24,22 +22,25 @@ const resetGame = () => {
     houseImage.src = "assets/images/housecontainerimages/house_0.png";
     trackAttempts.innerText = `Attempts: ${attemptsCount} / ${maxAttempts}`;
     getRandom();
-    };
+    //create blanks for the searched word
+    for (let i = 0; i < currentWord.length; i++) {
+            wordArray += "_ ";
+            wordDisplay.innerHTML = wordArray;
+        }
+};
+// get random word from external js file with array called bibleWordList
 const getRandom = () => {
     const { word, hint } = bibleWordList[Math.floor(Math.random() * bibleWordList.length)];
     console.log(word, hint);
     //set to show word and hint
     currentWord = word;
     document.querySelector("#cue").innerText = hint;
-    //create blanks for the searched word
-    for (let i = 0; i < currentWord.length; i++) {
-        wordArray += "_ ";
-        document.getElementById("current").innerHTML = wordArray;
-    }
+
 };
 //Code snipped adapted from 
 //https://www.geeksforgeeks.org/word-guessing-game-using-html-css-and-javascript/
-
+/*jshint esversion: 6 */
+//as suggested in https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const 
 const playGame = () => {
     // To check empty input
     if (!input.value) {
@@ -73,13 +74,21 @@ const playGame = () => {
         } else {
             updatedDisplay += "_ ";
             allLettersGuessed = false;
-            attemptsCount++;
-}
+            }
         }
     document.getElementById("current").textContent = updatedDisplay;
-        document.querySelector("#trackingcontainer p").innerHTML= `Attempts: ${attemptsCount}/ ${maxAttempts}`;
+    //if letter guess wrong
+    if (!allLettersGuessed){
+        attemptsCount++;
+        console.log(attemptsCount);
+        houseImage.src=`assets/images/housecontainerimages/house_${attemptsCount}.png`;
+    }
+    trackAttempts.innerText= `Attempts: ${attemptsCount}/ ${maxAttempts}`;
     // Check if all letters have been guessed
     if (allLettersGuessed) {
-        alert(`Congratulations! You build your house on solid ground! You guessed: ${currentWord} !`);
+        alert(`🎉 Congratulations! You build your house on solid ground! You guessed: ${currentWord} !`);
+
+        } else if (attemptsCount==maxAttempts){
+            alert("😢 Sorry, your house collapsed. Try to rebuild your house on solid ground.");
         }
     };

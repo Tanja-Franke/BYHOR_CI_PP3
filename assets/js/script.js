@@ -68,9 +68,10 @@ const playGame = () => {
     // Update the word display based on the guessed letters
     let updatedDisplay = "";
     let allLettersGuessed = true;
-    for (let a = 0; a < currentWord.length; a++) {
+        for (let a = 0; a < currentWord.length; a++) {
         if (guessesList.includes(currentWord[a])) {
             updatedDisplay += currentWord[a] + " ";
+            attemptsCount=0;
         } else {
             updatedDisplay += "_ ";
             allLettersGuessed = false;
@@ -78,7 +79,7 @@ const playGame = () => {
         }
     document.getElementById("current").textContent = updatedDisplay;
     //if letter guess wrong
-    if (!allLettersGuessed){
+    if(!allLettersGuessed){
         attemptsCount++;
         console.log(attemptsCount);
         houseImage.src=`assets/images/housecontainerimages/house_${attemptsCount}.png`;
